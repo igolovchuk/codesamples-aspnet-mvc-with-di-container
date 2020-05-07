@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Messages";
+}
+<br/><br/>
+<div id="appdiv" ng-app="oursite">
+    <div class="panel panel-primary" ng-controller="MessCtrl">
+        <h3 class="panel-heading">Messages</h3>
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Date Posted</th>
+                        <th>Author</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th class="text-right">Description</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in items | orderBy : '-datePosted'">
+                        <td>{{item.datePosted | date : "dd/MM/yy HH:mm"}}</td>
+                        <td>{{item.author}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.subject}}</td>
+                        <td class="text-right">{{item.description}}</td>
+                        <td class="text-center">
+                            <button class="btn btn-xs btn-primary" ng-click="delete(item)">
+                                Delete
+                            </button>
+                            @*<button class="btn btn-xs btn-primary" ng-click="editOrCreate(item)">
+                                Edit
+                            </button>*@
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <button class="btn btn-primary" ng-click="refresh()">Refresh</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/angular/angular.js"></script>
+<script src="~/Scripts/app/common.js"></script>
+<script src="~/Scripts/angular/app.js"></script>
+<script src="~/Scripts/angular/message-controller.js"></script>
+

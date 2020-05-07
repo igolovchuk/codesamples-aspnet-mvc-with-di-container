@@ -1,0 +1,77 @@
+﻿@*@section SPAViews {
+    @Html.Partial("_Home")
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/app")
+}*@
+@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html ng-app="oursite">
+ <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>company Tech</title>
+    <meta name="description" content="company Tech">
+    <meta name="author" content="company.com">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+</head>
+<body data-spy="scroll" data-target="#navigation" data-offset="75">
+    <!-- Page Preloader -->
+    <div class="page-mask">
+        <div class="page-loader">
+
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <!-- /Page Preloader -->
+    <!-- Warpper -->
+    <div class="wrap with-logo">
+
+
+        <!-- Image Background Parallax -->
+         @Html.Partial("_title")
+        <!--/Image Background Parallax -->
+
+        <!-- Header -->
+         @Html.Partial("_header")
+        <!-- /Header -->
+
+        <!-- Section 2 -->
+         @Html.Partial("_aboutus")
+        <!-- /Section 2 -->
+
+        <!-- Section 3 -->
+           @Html.Partial("_portfolio")
+        <!-- /Section 3 -->
+
+        <!-- Section 4 -->
+          @Html.Partial("_services")
+        <!-- /Section 4 -->
+
+        <!-- Section 5 -->
+            @Html.Partial("_feedback")
+        <!-- /Section 5 -->
+      
+        <!-- Section 7 -->
+         @Html.Partial("_contacts")
+        <!-- /Section 7 -->
+    </div>
+    <!-- /Warpper -->
+    <!-- The Scripts -->
+    <script src="~/Scripts/angular/angular.js"></script>
+    <script src="~/Scripts/angular/app.js"></script>
+    <script src="~/Scripts/angular/contact-controller.js"></script>
+
+</body>
+</html>
